@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+html {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-height: 100%;
+  background: black url('../assets/background.jpg') no-repeat top left;
+  background-size: cover;
+  font-family: 'Anonymous Pro';
+}
+html body {
+  overflow: hidden;
+}
+html body > header {
+  padding-top: 0.5em;
+  text-align: center;
+  text-shadow: 0 0 0.3em #FFF;
+}
+#overlay {
+  position: absolute;
+  z-index: 5;
+  background-color: #000;
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+.close {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  background: black;
+  color: #eaeaea;
+  font-weight: bold;
+  height: 1em;
+  padding: 0.5em;
+  border-radius: 0.4em;
+}
+.close:hover {
+  color: #FFF;
+  cursor: pointer;
+}
+#challenge-menu {
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.85);
+  transition: 1s;
+}
+#challenge-menu h2 {
+  margin-bottom: 0.7em;
+  text-align: center;
+}
+#challenge-menu.show {
+  right: 0 !important;
+}
+#challenge-menu > header {
+  border-bottom: 1px #CCC solid;
+  padding: 1em;
+}
+#challenge-menu > #challenge-instructions-wrapper {
+  border-top: 1px #FFF solid;
+  border-bottom: 1px #CCC solid;
+  padding: 1em;
+}
+#challenge-menu > #challenge-instructions-wrapper #challenge-instructions {
+  border: 2px #eaeaea solid;
+  background: #FFF;
+  padding: 0.5em;
+  height: 20em;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+#challenge-menu > #challenge-information {
+  padding: 1em;
+  border-top: 1px #FFF solid;
+  border-bottom: 1px #CCC solid;
+}
+#challenge-menu #leaderboard {
+  border-top: 1px #FFF solid;
+  padding: 1em;
+}
+#challenge-menu #leaderboard #leaderboard-entries .leaderboard-entry {
+  width: 55%;
+}
+#challenge-menu #leaderboard #leaderboard-entries .leaderboard-entry:before,
+#challenge-menu #leaderboard #leaderboard-entries .leaderboard-entry:after {
+  content: "";
+  display: table;
+}
+#challenge-menu #leaderboard #leaderboard-entries .leaderboard-entry:after {
+  clear: both;
+}
+#challenge-menu #leaderboard #leaderboard-entries .leaderboard-entry .leaderboard-name {
+  font-weight: bold;
+  float: left;
+}
+#challenge-menu #leaderboard #leaderboard-entries .leaderboard-entry .leaderboard-score {
+  float: right;
+}
+#dashboard {
+  width: 80%;
+  min-height: 500px;
+  margin: 5% auto;
+  background-image: url('../assets/grid.png');
+  background-repeat: none;
+  background-size: cover;
+}
+#dashboard #tree #tree-label > div {
+  background: #000;
+  color: #FFF;
+  font-weight: bold;
+  padding: 0.3em;
+  border: 2px #eaea solid;
+  border-radius: 4px;
+  box-shadow: 0 0 0.5em #eaeaea;
+  width: 6em;
+  font-size: 0.6em;
+  word-wrap: break-word;
+}
+#dashboard #tree #tree-label > div.child {
+  font-size: 0.8em;
+  color: '#eaeaea';
+  background-color: rgba(0, 0, 0, 0.75);
+}
+#dashboard #tree #tree-label > div.grand-child {
+  font-size: 0.6em;
+  color: #CCCCCC;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+#dashboard #tree #tree-label > div.irrelevant-offspring {
+  /* Die, ingrate! */
+  display: none;
+}
+#dashboard #tree #tree-label > div:hover {
+  background: #222;
+  border-color: #777;
+  color: #eaeaea;
+  cursor: pointer;
+}
+#dashboard #tree #tree-label > div .player-container {
+  position: absolute;
+  height: 1em;
+  bottom: -1em;
+  right: 0;
+}
+#dashboard #tree #tree-label > div .player-container .player {
+  width: 0.5em;
+  height: 0.8em;
+  border: 1px #000 solid;
+  float: right;
+  box-shadow: 0 0 0.5em #000;
+  background-color: #555555;
+}
+#dashboard #tree #tree-label > div .player-container .player.completed {
+  background-color: green;
+}
